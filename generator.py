@@ -1,22 +1,5 @@
 
 
-# sentense = []
-# j=0
-# # sentense = list();
-# for item, value in words_and_tags.items():
-#     if words_and_tags[item]['POS'] == 'verb':
-#         # sentence.append(random.choice(words_and_tags[item]['word']))
-#         sentense[0] = random.choice(words_and_tags[item]['word'])
-#     elif words_and_tags[item]['POS'] == 'determiner':
-#         sentense[1] = random.choice(words_and_tags[item]['word'])
-#     elif words_and_tags[item]['POS'] == 'noun':
-#         sentense[2] = random.choice(words_and_tags[item]['word'])   
-#     else:
-#         print ("nothing")
-#     j += 1
-
-# print (sentense[0])
-
 
 #get text and split into tokens and parts of speech
 import nltk
