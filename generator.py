@@ -136,7 +136,7 @@ def doslogan4():
     tags = alltags(tagged)
 
     newlist = []
-    structure1 = ['verb', 'determiner', 'noun']
+    structure1 = [inputverb, 'determiner', 'noun']
     for index, item in enumerate(structure1):
         if item in tags:
             one = givemeone(item, tagged)
@@ -153,7 +153,7 @@ def doslogan5():
     tags = alltags(tagged)
 
     newlist = []
-    structure1 = ['noun', 'preposition', 'noun']
+    structure1 = [inputnoun, 'preposition', 'noun']
     for index, item in enumerate(structure1):
         if item in tags:
             one = givemeone(item, tagged)
@@ -164,11 +164,27 @@ def doslogan5():
 
 
 
+inputnoun = input('Would you like to use your noun? Then type it now. If not type 2 ')
+if inputnoun != '2':
+    for _ in range(0,5):
+        doslogan5() 
+else:
+    inputverb = input('Would you like to use your verb? Then type it now. If not type 3 ')
+    if inputverb != '3':
+        for _ in range(0,5):
+            doslogan4()
+    else:
+        print ('Then let me do random slogans for you')
+        for _ in range(0,5):
+            doslogan1()
+            doslogan2()
+            doslogan3()
+            # doslogan4()
+            # doslogan5()        
 
-for _ in range(0,10):
-    doslogan1()
-    # doslogan2()
-    # doslogan3()
-    # doslogan4()
-    # doslogan5()
+
+
+
+
+
 
