@@ -1,6 +1,3 @@
-
-
-
 #get text and split into tokens and parts of speech
 import nltk
 from nltk import pos_tag, word_tokenize, WhitespaceTokenizer
