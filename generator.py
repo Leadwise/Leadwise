@@ -5,11 +5,20 @@ from nltk import pos_tag, word_tokenize, WhitespaceTokenizer
 import sys
 from sys import stdin
 import random
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c5685c0efbb32415ee39120811d1f866b41d40b
 from nltk.corpus import wordnet
 from termcolor import cprint, colored
 
 color = ["white", "yellow"]
 on_color = ["on_red", "on_magenta", "on_blue", "on_grey"]
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d928a546c8a05ae01644d21564e470b86adde4d1
+>>>>>>> 9c5685c0efbb32415ee39120811d1f866b41d40b
 
 def tags(tag):
     if tag in {"NNP","NNS","NN","NNPS"}:
@@ -88,6 +97,10 @@ def doslogan1():
     tags = alltags(tagged)
 
     newlist = []
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c5685c0efbb32415ee39120811d1f866b41d40b
     structure1 = ['verb', 'noun', 'determiner', 'verb', 'determiner', random.choice(syns)]
     for index, item in enumerate(structure1):
         if item in tags:
@@ -140,12 +153,95 @@ def doslogan4():
 
     newlist = []
     structure1 = ['verb', 'determiner', random.choice(syns)]
+<<<<<<< HEAD
+=======
+=======
+    structure1 = ['verb', 'determiner', 'noun','verb', 'determiner', 'noun']
+>>>>>>> d928a546c8a05ae01644d21564e470b86adde4d1
     for index, item in enumerate(structure1):
         if item in tags:
             one = givemeone(item, tagged)
             newlist.append(one)
         else:
             newlist.append(item)
+<<<<<<< HEAD
+    cprint(' '.join(newlist), random.choice(color), random.choice(on_color))
+=======
+    print(' '.join(newlist))
+
+def doslogan2():
+    transcript = open('transcription.txt').read()
+    words = WhitespaceTokenizer().tokenize(transcript)
+    tagged = POS_tagger(words)
+
+    tags = alltags(tagged)
+
+    newlist = []
+    structure1 = ['verb', 'preposition', 'determiner', 'noun']
+    for index, item in enumerate(structure1):
+        if item in tags:
+            one = givemeone(item, tagged)
+            newlist.append(one)
+        else:
+            newlist.append(item)
+    print(' '.join(newlist))
+
+def doslogan3():
+    transcript = open('transcription.txt').read()
+    words = WhitespaceTokenizer().tokenize(transcript)
+    tagged = POS_tagger(words)
+
+    tags = alltags(tagged)
+
+    newlist = []
+    structure1 = ['adjective', 'determiner', 'noun']
+    for index, item in enumerate(structure1):
+        if item in tags:
+            one = givemeone(item, tagged)
+            newlist.append(one)
+        else:
+            newlist.append(item)
+    print(' '.join(newlist))
+
+def doslogan4():
+    transcript = open('transcription.txt').read()
+    words = WhitespaceTokenizer().tokenize(transcript)
+    tagged = POS_tagger(words)
+
+    tags = alltags(tagged)
+
+    newlist = []
+    structure1 = [inputverb, 'determiner', 'noun']
+    for index, item in enumerate(structure1):
+        if item in tags:
+            one = givemeone(item, tagged)
+            newlist.append(one)
+        else:
+            newlist.append(item)
+    print(' '.join(newlist))
+>>>>>>> d928a546c8a05ae01644d21564e470b86adde4d1
+
+def doslogan5():
+    transcript = open('transcription.txt').read()
+    words = WhitespaceTokenizer().tokenize(transcript)
+    tagged = POS_tagger(words)
+
+    tags = alltags(tagged)
+
+    newlist = []
+<<<<<<< HEAD
+    structure1 = [random.choice(syns), 'preposition', 'noun']
+=======
+    structure1 = [inputnoun, 'preposition', 'noun']
+>>>>>>> d928a546c8a05ae01644d21564e470b86adde4d1
+>>>>>>> 9c5685c0efbb32415ee39120811d1f866b41d40b
+    for index, item in enumerate(structure1):
+        if item in tags:
+            one = givemeone(item, tagged)
+            newlist.append(one)
+        else:
+            newlist.append(item)
+<<<<<<< HEAD
     cprint(' '.join(newlist), random.choice(color), random.choice(on_color))
 
 def doslogan5():
@@ -163,6 +259,9 @@ def doslogan5():
             newlist.append(one)
         else:
             newlist.append(item)
+=======
+<<<<<<< HEAD
+>>>>>>> 9c5685c0efbb32415ee39120811d1f866b41d40b
     cprint(' '.join(newlist), random.choice(color), random.choice(on_color))
 
 
@@ -219,6 +318,7 @@ print ('\n\nDo you want to try one more time? \nThen, run "python3 generator.py"
 #             doslogan3()
 #             # doslogan4()
 #             # doslogan5()
+
 
 
 
