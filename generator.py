@@ -5,6 +5,14 @@ from nltk import pos_tag, word_tokenize, WhitespaceTokenizer
 import sys
 from sys import stdin
 import random
+<<<<<<< HEAD
+from nltk.corpus import wordnet
+from termcolor import cprint, colored
+
+color = ["white", "yellow"]
+on_color = ["on_red", "on_magenta", "on_blue", "on_grey"]
+=======
+>>>>>>> d928a546c8a05ae01644d21564e470b86adde4d1
 
 def tags(tag):
     if tag in {"NNP","NNS","NN","NNPS"}:
@@ -83,13 +91,71 @@ def doslogan1():
     tags = alltags(tagged)
 
     newlist = []
-    structure1 = ['verb', 'determiner', 'noun','verb', 'determiner', 'noun']
+<<<<<<< HEAD
+    structure1 = ['verb', 'noun', 'determiner', 'verb', 'determiner', random.choice(syns)]
     for index, item in enumerate(structure1):
         if item in tags:
             one = givemeone(item, tagged)
             newlist.append(one)
         else:
             newlist.append(item)
+    cprint(' '.join(newlist), random.choice(color), random.choice(on_color))
+
+def doslogan2():
+    transcript = open('transcription.txt').read()
+    words = WhitespaceTokenizer().tokenize(transcript)
+    tagged = POS_tagger(words)
+
+    tags = alltags(tagged)
+
+    newlist = []
+    structure1 = ['verb', 'preposition', 'determiner', random.choice(syns)]
+    for index, item in enumerate(structure1):
+        if item in tags:
+            one = givemeone(item, tagged)
+            newlist.append(one)
+        else:
+            newlist.append(item)
+    cprint(' '.join(newlist), random.choice(color), random.choice(on_color))
+
+def doslogan3():
+    transcript = open('transcription.txt').read()
+    words = WhitespaceTokenizer().tokenize(transcript)
+    tagged = POS_tagger(words)
+
+    tags = alltags(tagged)
+
+    newlist = []
+    structure1 = ['adjective', 'determiner', random.choice(syns)]
+    for index, item in enumerate(structure1):
+        if item in tags:
+            one = givemeone(item, tagged)
+            newlist.append(one)
+        else:
+            newlist.append(item)
+    cprint(' '.join(newlist), random.choice(color), random.choice(on_color))
+
+def doslogan4():
+    transcript = open('transcription.txt').read()
+    words = WhitespaceTokenizer().tokenize(transcript)
+    tagged = POS_tagger(words)
+
+    tags = alltags(tagged)
+
+    newlist = []
+    structure1 = ['verb', 'determiner', random.choice(syns)]
+=======
+    structure1 = ['verb', 'determiner', 'noun','verb', 'determiner', 'noun']
+>>>>>>> d928a546c8a05ae01644d21564e470b86adde4d1
+    for index, item in enumerate(structure1):
+        if item in tags:
+            one = givemeone(item, tagged)
+            newlist.append(one)
+        else:
+            newlist.append(item)
+<<<<<<< HEAD
+    cprint(' '.join(newlist), random.choice(color), random.choice(on_color))
+=======
     print(' '.join(newlist))
 
 def doslogan2():
@@ -142,6 +208,7 @@ def doslogan4():
         else:
             newlist.append(item)
     print(' '.join(newlist))
+>>>>>>> d928a546c8a05ae01644d21564e470b86adde4d1
 
 def doslogan5():
     transcript = open('transcription.txt').read()
@@ -151,13 +218,75 @@ def doslogan5():
     tags = alltags(tagged)
 
     newlist = []
+<<<<<<< HEAD
+    structure1 = [random.choice(syns), 'preposition', 'noun']
+=======
     structure1 = [inputnoun, 'preposition', 'noun']
+>>>>>>> d928a546c8a05ae01644d21564e470b86adde4d1
     for index, item in enumerate(structure1):
         if item in tags:
             one = givemeone(item, tagged)
             newlist.append(one)
         else:
             newlist.append(item)
+<<<<<<< HEAD
+    cprint(' '.join(newlist), random.choice(color), random.choice(on_color))
+
+
+
+answer= input('Would you like to generate random slogans from the dataset? (y/n) ')
+if answer == 'y' or answer == 'Y':
+    syns = []
+    syns.append('noun')
+    print ('\nVery well, here is what I have for now:\n')
+    for _ in range(0,5):
+        doslogan1() 
+        doslogan2() 
+        doslogan3() 
+        doslogan4() 
+        doslogan5()
+elif answer == 'n' or answer == 'N':
+    topic = input('What topic would you like your slogan to have?\n ')
+    syns = []
+    for syn in wordnet.synsets(topic):
+     
+        for lemma in syn.lemmas():
+     
+            syns.append(lemma.name())
+    print ('Ok then, here are your slogans:\n')
+    for _ in range(0,5):
+        doslogan1() 
+        doslogan2() 
+        doslogan3() 
+        doslogan4() 
+        doslogan5() 
+
+print ('\nCopy your best slogans in a textfile with "CTRL+SHIFT+C"\n')
+
+print ('\n\nDo you want to try one more time? \nThen, run "python3 generator.py" in the terminal (this black screen that you see) one more time.\n')
+ 
+
+
+
+#ANOTHER VERSION OF OUTCOME
+# inputnoun = input('Would you like to use your noun? Then type it now. If not type 2 ')
+# if inputnoun != '2':
+#     for _ in range(0,5):
+#         doslogan5() 
+# else:
+#     inputverb = input('Would you like to use your verb? Then type it now. If not type 3 ')
+#     if inputverb != '3':
+#         for _ in range(0,5):
+#             doslogan4()
+#     else:
+#         print ('Then let me do random slogans for you')
+#         for _ in range(0,5):
+#             doslogan1()
+#             doslogan2()
+#             doslogan3()
+#             # doslogan4()
+#             # doslogan5()
+=======
     print(' '.join(newlist))
 
 
@@ -182,6 +311,7 @@ else:
 
 
 
+>>>>>>> d928a546c8a05ae01644d21564e470b86adde4d1
 
 
 
